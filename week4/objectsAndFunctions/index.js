@@ -67,3 +67,68 @@ console.log(palindrome('polidrome'));
 console.log("");
 console.log('Exercicio numero 2');
 
+const maior = maior => {
+  let aux = maior[0];
+  let indice = 0;
+  maior.forEach((element, index) => {
+    if (element > aux) {
+      aux = element;
+      indice = index;
+    }
+  });
+  return indice;
+}
+console.log(maior([2, 3, 6, 7, 10, 1]));
+
+console.log("");
+console.log('Exercicio numero 3');
+
+const menor = menor => {
+  let aux = menor[0];
+  let indice = 0;
+  menor.forEach((element, index) => {
+    if (element < aux) {
+      aux = element;
+      indice = index;
+    }
+  });
+  return indice;
+};
+console.log(menor([2, 4, 6, 7, 10, 0, -3]));
+
+console.log("");
+console.log('Exercicio numero 4');
+
+const maiorPalavra = arr => {
+  let aux = arr[0];
+  arr.forEach(element => {
+    if(element.length > aux.length){
+      aux = element;
+    }
+  })
+  console.log(aux);
+}
+maiorPalavra(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']);
+
+console.log("");
+console.log('Exercicio numero 5');
+
+const repetido = arr => {
+  let num = {};
+  let valor;
+  let aux;
+  arr.forEach(ele => {
+    valor = ele;
+    num[valor] = num[valor] === undefined ? 1 : num[valor] + 1;
+  });
+  valor = 0;
+  for(let indice in num){
+    if(num[indice] > valor){
+      valor = num[indice];
+      aux = indice;
+    }
+  }
+
+  console.log(aux);
+}
+repetido([2, 3, 2, 5, 8, 2, 3])
