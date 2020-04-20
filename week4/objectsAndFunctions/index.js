@@ -132,3 +132,23 @@ const repetido = arr => {
   console.log(aux);
 }
 repetido([2, 3, 2, 5, 8, 2, 3])
+
+console.log("");
+console.log('Exercicio numero 6');
+
+const somatoria = n => {
+  let soma = 0;
+  for(let i = 1; i <= n; i+=1){
+    soma += i;
+  }
+  console.log(soma);
+}
+somatoria(5);
+
+console.log("");
+console.log('Exercicio numero 7');
+
+const substring = (word, end) => {
+  if (word.match(/end/)) return true;
+  else false;
+}
