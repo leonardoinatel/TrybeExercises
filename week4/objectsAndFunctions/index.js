@@ -155,3 +155,69 @@ const verificaFimPalavra = (word, end) => {
 }
 
 console.log(verificaFimPalavra("trybess", "bess"));
+
+const romano = {
+  //Unidade
+  0 : [
+     ''		//0
+    ,'I' 	//1
+    ,'II'	//2
+    ,'III'//3
+    ,'IV'	//4
+    ,'V'	//5
+    ,'VI'	//6
+    ,'VII'//7
+    ,'VIII'//8
+    ,'IX'	//9				
+  ]
+  //Dezena
+  ,1 : [
+     ''		  //10
+    ,'X'	  //10
+    ,'XX'   //20
+    ,'XXX'  //30
+    ,'XL'   //40
+    ,'L'    //50
+    ,'LX'   //60
+    ,'LXX'  //70
+    ,'LXXX' //80
+    ,'XC'   //90
+  ]
+  ,2 : [
+    ''
+    ,'C'	  //100
+    ,'CC'   //200
+    ,'CCC'  //300				
+    ,'CD'   //400
+    ,'D'    //500
+    ,'DC'   //600
+    ,'DCC'  //700
+    ,'DCCC' //800
+    ,'CM' 	//900
+  ]
+  ,3 : [
+    ''
+    ,'M'    //1000
+  ]
+};
+
+const getDecimal = num => {
+  const numString = num.toString();
+  const tamanho = numString.length - 1;
+  let string = '';
+  let valorFinal = "";
+  let aux = 0;
+
+  for (let i = tamanho; i >= 0; i-=1) {
+    string += numString.charAt(i);
+    console.log(string)
+  }  
+  for (let i = tamanho; i >= 0; i-=1) {
+    aux = parseInt(string.charAt(i));
+    console.log(aux)
+    valorFinal += romano[i][aux]; 
+  }
+  console.log(valorFinal)
+}
+getDecimal(1999);
+
