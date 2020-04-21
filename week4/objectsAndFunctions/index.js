@@ -148,7 +148,10 @@ somatoria(5);
 console.log("");
 console.log('Exercicio numero 7');
 
-const substring = (word, end) => {
-  if (word.match(/end/)) return true;
-  else false;
+const verificaFimPalavra = (word, end) => {
+  const sub = word.slice(-(end.length));
+  
+  return (end === sub) ? true : false;
 }
+
+console.log(verificaFimPalavra("trybess", "bess"));
