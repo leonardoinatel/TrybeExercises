@@ -22,17 +22,15 @@ function areaOfCircle(radius) {
   return area;
 }
 
-let squareButton = document.getElementById("square-button");
-let halfButton = document.getElementById("half-button");
-let percentButton = document.getElementById("percent-button");
-let areaButton = document.getElementById("area-button");
+const squareButton = document.getElementById("square-button");
+const halfButton = document.getElementById("half-button");
+const percentButton = document.getElementById("percent-button");
+const areaButton = document.getElementById("area-button");
+const solution = document.getElementById("solution");
+const num1 = document.getElementById("percent1-input");
+const num2 = document.getElementById("percent2-input");
 
-squareButton.addEventListener("click", () => document.getElementById("solution").innerHTML = squareNumber(document.getElementById("square-input").value));
-halfButton.addEventListener("click", () => document.getElementById("solution").innerHTML = halfOf(document.getElementById("half-input").value));
-areaButton.addEventListener("click", () => document.getElementById("solution").innerHTML = areaOfCircle(document.getElementById("area-input").value));
-
-percentButton.addEventListener("click", () => {
-  var num1 = document.getElementById("percent1-input").value;
-  var num2 = document.getElementById("percent2-input").value;
-  document.getElementById("solution").innerHTML = `${num1} equivale a ${percentOf(num1, num2)} % de ${num2}`;
-});
+squareButton.addEventListener("click", () => solution.innerHTML = squareNumber(document.getElementById("square-input").value));
+halfButton.addEventListener("click", () => solution.innerHTML = halfOf(document.getElementById("half-input").value));
+areaButton.addEventListener("click", () => solution.innerHTML = areaOfCircle(document.getElementById("area-input").value));
+percentButton.addEventListener("click", () => solution.innerHTML = `${num1.value} equivale a ${percentOf(num1.value, num2.value)} % de ${num2.value}`);
