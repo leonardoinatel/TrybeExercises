@@ -6,7 +6,7 @@
 // previousSibling: retorna o nó anterior.
 // nextElementSibling: retorna o próximo elemento.
 // previousElementSibling: retorna o elemento anterior.}
-
+// ------------- BUSCANDO ELEMENTOS ------------------------------------------------------------------
 // Acesse o elemento elementoOndeVoceEsta.
 const voceSta = document.getElementById('elementoOndeVoceEsta');
 // Acesse pai a partir de elementoOndeVoceEsta e adicione uma color a ele.
@@ -24,3 +24,23 @@ console.log(voceSta.parentNode.textContent);
 console.log(voceSta.nextElementSibling);
 // Agora acesse o terceiroFilho a partir de pai.
 console.log(pai.childNodes[5]);
+// -------------------- CRIANDO ELEMENTOS ---------------------------------------------------------------
+// Crie um irmão para elementoOndeVoceEsta.
+const voceStara = document.createElement('div');
+pai.appendChild(voceStara);
+voceStara.id = 'elementoOndeVoceEstaDepois';
+console.log(pai.lastChild);
+// Crie um filho para elementoOndeVoceEsta.
+voceSta.appendChild(voceStara).id = "terceiroEUltimoFilho";
+// Crie um filho para primeiroFilhoDoFilho.
+const filhodoFilho = document.getElementById('primeiroFilhoDoFilho')
+const filhodofilhodofilho = filhodoFilho.appendChild(voceStara)
+filhodofilhodofilho.id = 'primeiroFilhoDoFilhoDoFilho'
+console.log(filhodofilhodofilho)
+// A partir desse filho criado, acesse terceiroFilho.
+console.log(filhodofilhodofilho.parentNode.parentNode.nextElementSibling);
+// --------------------- REMOCAO DE ELEMENTOS ----------------------------------------------------------------
+// Remova todos os elementos da página, menos pai, elementoOndeVoceEsta e primeiroFilhoDoFilho.
+const primeiroFilho = document.getElementById("primeiroFilho");
+pai.removeChild(primeiroFilho);
+pai.firstChild.removeChild(this);
