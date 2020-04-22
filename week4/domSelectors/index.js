@@ -27,13 +27,7 @@ upperCase();
 
 // Crie uma função que exiba o conteúdo de todas as tags <p> no console.
 const imprime = () => {
-    const tagP = document.getElementsByTagName('p');
-    for (let i = 0; i < tagP.length; i+=1){
-        console.log(tagP[i].innerHTML)
-    }
-
-    tagP.forEach(element => {
-        console.log(element.innerText)
-    });
+    const tagP = document.querySelectorAll('p');
+    tagP.forEach(element => console.log(element.innerText))
 }
 imprime();
