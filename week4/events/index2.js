@@ -22,7 +22,6 @@ function areaOfCircle(radius) {
   return area;
 }
 
-
 let squareButton = document.getElementById("square-button");
 let halfButton = document.getElementById("half-button");
 let percentButton = document.getElementById("percent-button");
@@ -37,6 +36,3 @@ percentButton.addEventListener("click", () => {
   var num2 = document.getElementById("percent2-input").value;
   document.getElementById("solution").innerHTML = `${num1} equivale a ${percentOf(num1, num2)} % de ${num2}`;
 });
-    
-
-
